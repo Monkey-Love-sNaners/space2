@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Space</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000000 0%, #ffffff 100%);
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #1a1aff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #4d4dff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        nav {
+            background-color: #333399;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background-color: #4d4dff;
+            transform: scale(1.1);
+        }
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 40px;
+            border: 2px solid #4d4dff;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            color: #4d4dff;
+            border-bottom: 2px solid #4d4dff;
+            padding-bottom: 10px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .button {
+            background-color: #4d4dff;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #3333cc;
+            transform: scale(1.05);
+        }
+        .fun-area {
+            background-color: #333399;
+            padding: 20px;
+            border-radius: 10px;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .avatar-customization {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border: 2px solid #4d4dff;
+        }
+        .avatar-preview {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #4d4dff;
+            border-radius: 50%;
+            margin: 10px auto;
+            background-color: #ffffff;
+            display: inline-block;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .avatar-name {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #4d4dff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .avatar-controls {
+            margin: 20px 0;
+        }
+        .avatar-controls input {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #4d4dff;
+            background-color: #ffffff;
+            color: #000;
+        }
+        .avatar-controls label {
+            margin-right: 10px;
+        }
+        footer {
+            background-color: #1a1aff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 3px solid #4d4dff;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+        #visitor-counter {
+            display: inline-block;
+            background-color: #1a1aff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        #visitor-counter::after {
+            content: "Hover for total visits";
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            color: #ffffff;
+            background-color: #333399;
+            padding: 5px;
+            border-radius: 5px;
+            display: none;
+        }
+        #visitor-counter:hover::after {
+            display: block;
+        }
+        .counter {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .custom-art {
+            background: url('path_to_artwork_image') no-repeat center center;
+            background-size: cover;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        .info-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #4d4dff;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .info-header h2 {
+            margin: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore Space: The Solar System and Beyond</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="solar-system.html">Solar System</a>
+        <a href="earth.html">Earth</a>
+        <a href="biology-in-space.html">Biology in Space</a>
+        <a href="custom-code.html">Fun Area</a>
+        <a href="avatar-customization.html">Avatar Customization</a>
+        <a href="beyond-solar-system.html">Beyond the Solar System</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Explore Space!</h2>
+            <p>Discover the wonders of our Solar System and beyond. Click the buttons below to explore different sections of our website.</p>
+
+            <div class="custom-art"></div>
+
+            <div id="visitor-counter">Visitors: <span id="current-visitor-count">0</span></div>
+            <div class="counter">
+                <button class="button" id="click-counter">Click Count: 0</button>
+            </div>
+
+            <div class="fun-area">
+                <p>Welcome to the Fun Area! Explore different sections of the website to find hidden codes. Enter these codes to unlock cool features and earn rewards!</p>
+            </div>
+        </section>
+
+        <section id="solar-system">
+            <h2>The Solar System</h2>
+            <div class="info-header">
+                <h2>Solar System Overview</h2>
+            </div>
+            <div class="planet-info">
+                <h3>Planets</h3>
+                <p>Learn about the eight planets of our Solar System, including Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.</p>
+                <img src="path_to_placeholder_image" alt="Planets" class="image">
+            </div>
+            <div class="moon-info">
+                <h3>Moons</h3>
+                <p>Discover the many moons orbiting the planets, including Earth's Moon, Jupiter's Galilean moons, and Saturn's rings.</p>
+                <img src="path_to_placeholder_image" alt="Moons" class="image">
+            </div>
+            <div class="asteroid-info">
+                <h3>Asteroids</h3>
+                <p>Explore the asteroid belt between Mars and Jupiter, and learn about famous asteroids like Ceres and Vesta.</p>
+                <img src="path_to_placeholder_image" alt="Asteroids" class="image">
+            </div>
+        </section>
+
+        <section id="earth">
+            <h2>Earth</h2>
+            <div class="info-header">
+                <h2>Earth's Details</h2>
+            </div>
+            <div class="earth-info">
+                <h3>History</h3>
+                <p>Explore the history of Earth, from its formation over 4.5 billion years ago to the present day.</p>
+                <img src="path_to_placeholder_image" alt="Earth History" class="image">
+            </div>
+            <div class="earth-evolution">
+                <h3>Evolution</h3>
+                <p>Learn about the evolution of life on Earth, from the earliest single-celled organisms to complex multicellular life.</p>
+                <img src="path_to_placeholder_image" alt="Earth Evolution" class="image">
+            </div>
+            <div class="earth-climate">
+                <h3>Climate</h3>
+                <p>Understand Earth's climate systems, including weather patterns, climate change, and global warming.</p>
+                <img src="path_to_placeholder_image" alt="Earth Climate" class="image">
+            </div>
+            <div class="earth-geology">
+                <h3>Geology</h3>
+                <p>Study Earth's geological features, including tectonic plates, earthquakes, and volcanoes.</p>
+                <img src="path_to_placeholder_image" alt="Earth Geology" class="image">
+            </div>
+        </section>
+
+        <section id="biology-in-space">
+            <h2>Biology in Space</h2>
+            <div class="info-header">
+                <h2>Space Biology</h2>
+            </div>
+            <p>Explore how living organisms adapt to space environments, including experiments on the International Space Station (ISS).</p>
+            <img src="path_to_placeholder_image" alt="Biology in Space" class="image">
+        </section>
+
+        <section id="fun-area">
+            <h2>Fun Area</h2>
+            <div class="info-header">
+                <h2>Find Hidden Codes</h2>
+            </div>
+            <p>Read through different sections of our website to discover hidden codes. Enter these codes here for a chance to unlock cool features and rewards!</p>
+            <input type="text" id="code-input" placeholder="Enter code here">
+            <button class="button" onclick="submitCode()">Submit Code</button>
+            <div id="code-feedback"></div>
+        </section>
+
+        <section id="avatar-customization">
+            <h2>Customize Your Avatar</h2>
+            <div class="avatar-customization">
+                <div class="avatar-preview">
+                    <div class="avatar-name" id="avatar-name-display">Your Name Here</div>
+                </div>
+                <div class="avatar-controls">
+                    <label for="hair-color">Hair Color:</label>
+                    <input type="color" id="hair-color" name="hair-color">
+                    <label for="eye-color">Eye Color:</label>
+                    <input type="color" id="eye-color" name="eye-color">
+                    <label for="clothing-color">Clothing Color:</label>
+                    <input type="color" id="clothing-color" name="clothing-color">
+                    <label for="avatar-name-input">Avatar Name:</label>
+                    <input type="text" id="avatar-name-input" placeholder="Enter Avatar Name">
+                    <button class="button" onclick="saveAvatar()">Save Avatar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="beyond-solar-system">
+            <h2>Beyond the Solar System</h2>
+            <div class="info-header">
+                <h2>The One Piece is Real</h2>
+            </div>
+            <p>Explore the mysteries beyond our Solar System. For now, we hint at an intriguing secret: The One Piece is real!</p>
+            <img src="path_to_straw_hats_flag" alt="Straw Hats Flag" class="image">
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Explore Space. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Visitor Counter
+        let currentVisitorCount = 0;
+        let totalVisits = 1234; // Example total visits count
+        document.getElementById('visitor-counter').addEventListener('click', function() {
+            currentVisitorCount++;
+            document.getElementById('current-visitor-count').textContent = currentVisitorCount;
+        });
+
+        document.getElementById('visitor-counter').addEventListener('mouseover', function() {
+            this.querySelector('::after').textContent = `Total visits: ${totalVisits}`;
+        });
+
+        // Click Counter
+        let clickCount = 0;
+        document.getElementById('click-counter').addEventListener('click', function() {
+            clickCount++;
+            this.textContent = `Click Count: ${clickCount}`;
+        });
+
+        // Fun Area Code Submission
+        function submitCode() {
+            const code = document.getElementById('code-input').value.trim();
+            let feedback = "Invalid code.";
+            if (code === "SPACE123") {
+                feedback = "Congratulations! You've unlocked a special feature!";
+            }
+            document.getElementById('code-feedback').textContent = feedback;
+        }
+
+        // Avatar Customization
+        function updateAvatar() {
+            const hairColor = document.getElementById('hair-color').value;
+            const eyeColor = document.getElementById('eye-color').value;
+            const clothingColor = document.getElementById('clothing-color').value;
+            const avatarPreview = document.querySelector('.avatar-preview');
+            avatarPreview.style.background = `linear-gradient(${hairColor}, ${eyeColor}, ${clothingColor})`;
+        }
+
+        document.querySelectorAll('.avatar-controls input').forEach(input => {
+            input.addEventListener('input', updateAvatar);
+        });
+
+        document.getElementById('avatar-name-input').addEventListener('input', function() {
+            const name = this.value;
+            document.getElementById('avatar-name-display').textContent = name || 'Your Name Here';
+        });
+
+        function saveAvatar() {
+            alert('Avatar saved with name: ' + document.getElementById('avatar-name-input').value);
+        }
+    </script>
+</body>
+</html>
